@@ -1,4 +1,3 @@
-
 ---
 eip: <to be assigned>
 title: Reparo Integration
