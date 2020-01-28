@@ -20,7 +20,10 @@ The title should be 44 characters or less.
 ## Simple Summary
 <!--"If you can't explain it simply, you don't understand it well enough." Provide a simplified and layman-accessible explanation of the EIP.-->
 <!--If you can't explain it simply, you don't understand it well enough." Provide a simplified and layman-accessible explanation of the EIP.-->
-TODO
+Reparo is a repair layer to fix contract bugs and major
+erroraneous transactions with consensus from the community while ensuring the
+security of the underlying blockchain. This EIP aims to integrate Reparo ( or a
+version of Reparo) into the Ethereum Blockchain.
 
 ## Abstract
 <!--A short (~200 word) description of the technical issue being addressed.-->
