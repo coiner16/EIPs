@@ -68,9 +68,9 @@ TODO
 Reparo is a secure repair layer under the assumption that 51% of the
 miners/stakeholders are honest. When this is violated, it can be clearly seen
 that the blockchain is vulnerable to double-spending, censoring and other
-attacks before making harmful edits to the chain. These harmful edits are public
-and can be later fixed ( after removing the malicious players ) unlike the other
-attacks.
+attacks before making harmful edits to the chain. However, these harmful edits are public
+and can be later fixed (after removing the malicious players) unlike the other
+attacks which are irreversible.
 
 ## Copyright
 Copyright and related rights waived via [CC0](https://creativecommons.org/publicdomain/zero/1.0/).
