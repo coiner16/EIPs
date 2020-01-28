@@ -32,7 +32,7 @@ Our recent research work [Reparo: Publicly Verifiable Layer to Repair Blockchain
 ## Motivation
 <!--The motivation is critical for EIPs that want to change the Ethereum protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the EIP solves. EIP submissions without sufficient motivation may be rejected outright.-->
 <!--The motivation is critical for EIPs that want to change the Ethereum protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the EIP solves. EIP submissions without sufficient motivation may be rejected outright.-->
-TODO
+Drawing motivation from the problems faced by Ethereum users in [1](https://github.com/ethereum/wiki/wiki/Major-issues-resulting-in-lost-or-stuck-funds), it can be argued that for any real system there needs to be a mechanism to recover from erroraneous/buggy transactions. Especially with the move towards ETH 2.0, one wrong move can make most of the stakes adversarial i.e., make the adversary gain significant stakes in the system (possibly through a buggy contract). Therefore, a secure protocol like **Reparo** can go a long way in these situations instead of introducing ad-hoc fixes and forks (taking note from DAO, Spurious Dragon Fork).
 
 ## Specification
 <!--The technical specification should describe the syntax and semantics of any new feature. The specification should be detailed enough to allow competing, interoperable implementations for any of the current Ethereum platforms (go-ethereum, parity, cpp-ethereum, ethereumj, ethereumjs, and [others](https://github.com/ethereum/wiki/wiki/Clients)).-->
