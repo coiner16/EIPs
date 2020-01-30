@@ -18,14 +18,14 @@ The title should be 44 characters or less.
 
 ## Simple Summary
 <!--"If you can't explain it simply, you don't understand it well enough." Provide a simplified and layman-accessible explanation of the EIP.-->
-Reparo is a repair layer to fix contract bugs and major
+Reparo is a layer when adopted on top of a blockchain allows repair operations: fix contract bugs and major
 erroraneous transactions with consensus from the community while ensuring the
 security of the underlying blockchain. This EIP aims to integrate Reparo ( or a
 version of Reparo) into the Ethereum Blockchain.
 
 ## Abstract
 <!--A short (~200 word) description of the technical issue being addressed.-->
-Our recent research work [Reparo: Publicly Verifiable Layer to Repair Blockchains](https://arxiv.org/abs/2001.00486) proposes a layered approach to perform repair operations on the contents in the Ethereum blockchain. With Reparo, you can fix bugs in smart contracts and redact illicit data (in conformation to GDPR), etc. These repair operations can be performed on existing contents in the Ethereum blockchain. Unlike other existing proposals, Reparo does not require a new chain with a fresh genesis block and new cryptographic features. Reparo can instead be plugged in as a layer to the existing Ethereum chain and contents from several years ago such as DAO, Parity Multisig Wallet Hack and other such hacks can be repaired with consensus from the community. Reparo does not require a soft fork for every repair which is an added bonus for the miners as there is no change in software/hardware required to implement a repair.
+Our recent research work [Reparo: Publicly Verifiable Layer to Repair Blockchains](https://arxiv.org/abs/2001.00486) proposes a layered approach to perform repair operations on the contents in the Ethereum blockchain. With Reparo, you can fix bugs in smart contracts and redact illicit data (in conformation to GDPR), etc. These repair operations can be performed on existing contents in the Ethereum blockchain. Unlike other existing proposals, Reparo does not require a new chain with a fresh genesis block and new cryptographic features. Reparo can instead be plugged in as a layer to the existing Ethereum chain and contents from several years ago such as DAO, Parity Multisig Wallet Hack and other such hacks can be repaired with consensus from the community. Reparo does not require a soft fork for every repair which is an added bonus for the miners as there is no change in software/hardware required to implement each repair.
 
 ## Motivation
 <!--The motivation is critical for EIPs that want to change the Ethereum protocol. It should clearly explain why the existing protocol specification is inadequate to address the problem that the EIP solves. EIP submissions without sufficient motivation may be rejected outright.-->
@@ -42,12 +42,11 @@ TODO
 
 ## Backwards Compatibility
 <!--All EIPs that introduce backwards incompatibilities must include a section describing these incompatibilities and their severity. The EIP must explain how the author proposes to deal with these incompatibilities. EIP submissions without a sufficient backwards compatibility treatise may be rejected outright.-->
-Reparo does not introduce any backward incompatibilities.
+Reparo does not introduce any backward incompatibilities in terms of transaction/block structure. Since a repair operation means that some content from a past block is indeed changed, transactions that deal with the old version of the content may no longer be valid according to a client who has performed the repair operation. For example, transactions that deal with the old (buggy) state of a contract which has been later fixed may no longer be valid as the repaired state of the accounts may not allow the transaction.        
 
 ## Test Cases
 <!--Test cases for an implementation are mandatory for EIPs that are affecting consensus changes. Other EIPs can choose to include links to test cases if applicable.-->
-Test cases can be worked on after the policy is determined and if the proposal
-is accepted.
+Test cases can only be studied after fixing the reparo repair policy. Reparo does not affect the block proposal mechanism but rather only deals with how the state propagates before and after a repair.                   
 
 ## Implementation
 <!--The implementations must be completed before any EIP is given status "Final", but it need not be completed before the EIP is accepted. While there is merit to the approach of reaching consensus on the specification and rationale before writing code, the principle of "rough consensus and running code" is still useful when it comes to resolving many discussions of API details.
@@ -85,8 +84,8 @@ for repair is approved:
 <!--All EIPs must contain a section that discusses the security implications/considerations relevant to the proposed change. Include information that might be important for security discussions, surfaces risks and can be used throughout the life cycle of the proposal. E.g. include security-relevant design decisions, concerns, important discussions, implementation-specific guidance and pitfalls, an outline of threats and risks and how they are being addressed. EIP submissions missing the "Security Considerations" section will be rejected. An EIP cannot proceed to status "Final" without a Security Considerations discussion deemed sufficient by the reviewers.
 -->
 
-Reparo is a secure repair layer under the assumption that 51% of the
-miners/stakeholders are honest. When this is violated, it can be clearly seen
+Reparo is a secure repair layer under the assumption that majority of the
+miners/stakeholders are honest (follow the protocol). We also give rational arguments why honest behaviour is infact encouraged. When this assumption is violated, it can be clearly seen
 that the blockchain is vulnerable to double-spending, censoring and other
 attacks before making harmful edits to the chain. However, these harmful edits are public
 and can be later fixed (after removing the malicious players) unlike the other
